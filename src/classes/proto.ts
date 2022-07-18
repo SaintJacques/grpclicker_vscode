@@ -23,7 +23,7 @@ export class Proto {
           this.tag = splitted.join(".");
           let splittedTag = this.tag.split(".");
           if (splittedTag.length === 2) {
-            this.tag = splittedTag[1];
+            this.version = splittedTag[1];
           }
         }
       }
