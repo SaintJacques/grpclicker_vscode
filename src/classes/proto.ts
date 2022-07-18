@@ -23,7 +23,7 @@ export class Proto {
         }
       }
       if (line.endsWith("}")) {
-        this.services.push(new Service(curLines, path));
+        this.services.push(new Service(curLines, this));
         curLines = [];
       }
     }
