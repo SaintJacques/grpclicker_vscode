@@ -4,6 +4,7 @@ import { AdressList as HostsTreeView } from "./hosts/list";
 import { MetasList } from "./metas/list";
 import { ProtosTree as ProtosTreeView } from "./protos/tree";
 import { Storage } from "./storage/storage";
+import { Input } from "./webview/input";
 import { GrpcClickerView } from "./webview/panel";
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -85,12 +86,12 @@ export async function activate(context: vscode.ExtensionContext) {
     metasList.refresh(metas);
   });
 
-  vscode.commands.registerCommand("call.trigger", async () => {
+  vscode.commands.registerCommand("call.trigger", async (input: Input) => {
     // if (input.stream) {
     //   vscode.window.showWarningMessage("Stream calls are not available yet!");
     //   return;
     // }
-    webview.create();
+    webview.create(input);
   });
 }
 

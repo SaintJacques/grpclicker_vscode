@@ -1,10 +1,11 @@
 import { request } from "http";
 import * as vscode from "vscode";
+import { Input } from "./input";
 
 export class GrpcClickerView {
   constructor(private uri: vscode.Uri) {}
 
-  create() {
+  create(input: Input) {
     const panel = vscode.window.createWebviewPanel(
       "callgrpc",
       "gRPC call",
@@ -67,6 +68,6 @@ export class GrpcClickerView {
     </body>
   </html>`;
 
-    panel.webview.postMessage(`TODO input`);
+    panel.webview.postMessage(input);
   }
 }

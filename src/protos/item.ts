@@ -30,13 +30,25 @@ export class ProtoItem extends vscode.TreeItem {
         svg = "unary.svg";
       }
       super.contextValue = "call";
-
       let isStream = item.inputIsStream || item.outputIsStream;
-
       super.command = {
         command: "call.trigger",
         title: "Trigger opening of webview for grpc call",
-        arguments: [],
+        arguments: [
+          new Input(
+            item.proto.name,
+            item.proto.version,
+            item.input.name,
+            item.input.representation(),
+            item.output.name,
+            item.output.representation(),
+            `TODO|adress`,
+            item.name,
+            item.tag,
+            isStream,
+            [`TODO: metas`]
+          ),
+        ],
       };
     }
     if (item instanceof Message) {

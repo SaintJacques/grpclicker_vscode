@@ -7,8 +7,8 @@ export class Input {
     public responseName: string,
     public responseRepresentation: string,
     public adress: string,
+    public callName: string,
     public call: string,
-    public tls: boolean,
     public stream: boolean,
     public meta: string[]
   ) {}
