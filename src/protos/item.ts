@@ -5,6 +5,7 @@ import { Proto } from "../classes/proto";
 import { Message } from "../classes/message";
 import { Call } from "../classes/call";
 import { Field } from "../classes/field";
+import { Input } from "../webview/input";
 
 export class ProtoItem extends vscode.TreeItem {
   constructor(public item: Proto | Service | Call | Message | Field) {
@@ -31,6 +32,7 @@ export class ProtoItem extends vscode.TreeItem {
       super.contextValue = "call";
 
       let isStream = item.inputIsStream || item.outputIsStream;
+
       super.command = {
         command: "call.trigger",
         title: "Trigger opening of webview for grpc call",
