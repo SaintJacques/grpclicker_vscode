@@ -10,10 +10,14 @@ import { GrpcClickerView } from "./webview/panel";
 export async function activate(context: vscode.ExtensionContext) {
   const grpcurl = new Grpcurl();
   const storage = new Storage(context.globalState);
+
   const hostsView = new HostsTreeView(storage.hosts.listAsHosts());
+
   const protos = await grpcurl.protos(storage.protos.list());
   const protosView = new ProtosTreeView(grpcurl, protos);
+
   const metasList = new MetasList(storage.metas.listMetas());
+
   const webview = new GrpcClickerView(context.extensionUri);
 
   vscode.window.registerTreeDataProvider("hosts", hostsView);

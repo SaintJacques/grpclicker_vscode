@@ -68,6 +68,6 @@ export class GrpcClickerView {
     </body>
   </html>`;
 
-    panel.webview.postMessage(input);
+    panel.webview.postMessage(JSON.stringify(input));
   }
 }
