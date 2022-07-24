@@ -12,6 +12,8 @@
     <p1>Response - {respName}</p1>
   </center>
 
+<!-- TODO 
+ add visual accomodation of request handling while it runs-->
   <textarea
     name=""
     id=""

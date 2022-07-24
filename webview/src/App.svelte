@@ -26,9 +26,13 @@
     reqJson = obj.reqJson;
     respName = obj.respName;
     response = obj.response;
+    // TODO add trigger spinner cancellation if response is not empty string
   });
 
   function sendMessageToVscode() {
+// TODO
+// add spinner when 
+
     vscode.postMessage({
       command: "req",
       text: reqJson,
